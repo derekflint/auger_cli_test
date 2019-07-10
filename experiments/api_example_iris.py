@@ -41,7 +41,7 @@ def run_iris_train():
     print("leaderborad: {}".format(leaderboard))
     # Create pipeline based on best trial
     # Only downloaded version currently supported
-    result = experiments.predict_by_file_locally(client, file='./iris_train/files/iris_predict.csv', trial_id=leaderboard[0]['id'],save_to_file=False)
+    result = experiments.predict_by_file_locally(client, file='./iris_train/files/iris_predict.csv', trial_id=leaderboard[0]['id'],save_to_file=False,pull_docker=True)
     print(result[0])
 
 run_iris_train()
